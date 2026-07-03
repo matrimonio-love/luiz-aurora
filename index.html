@@ -132,13 +132,13 @@
 
     <div class="hero-divider"></div>
 
-    <p class="hero-tagline">
-      Vi invitiamo a celebrare insieme il nostro matrimonio
-    </p>
+    <p id="heroTagline" class="hero-tagline">
+    Vi invitano a celebrare il loro matrimonio
+</p>
 
-    <p class="date">
-      Sabato, 26 Settembre 2026
-    </p>
+<p id="heroDate" class="date">
+    Sabato, 26 Settembre 2026
+</p>
 
   </div>
 
@@ -588,34 +588,136 @@ reveals.forEach(section=>{
 
 });
 
-  /*======================================
-LANGUAGE
-======================================*/
+/* =====================================
+   LANGUAGE STATE
+===================================== */
 
-let currentLanguage="it";
+let currentLanguage = "it";
 
-function setLanguage(lang){
+/* =====================================
+   TRANSLATIONS
+===================================== */
 
-    currentLanguage=lang;
+const translations = {
 
-    localStorage.setItem("language",lang);
+    it: {
 
-    document.querySelectorAll(".flag").forEach(flag=>{
+        inviteText: "Vi invitano a celebrare il loro matrimonio",
+        inviteDate: "26 Settembre 2026",
 
+        heroTagline: "Vi invitano a celebrare il loro matrimonio",
+        heroDate: "Sabato, 26 Settembre 2026"
+
+    },
+
+    en: {
+
+        inviteText: "Invite you to celebrate their wedding",
+        inviteDate: "26 September 2026",
+
+        heroTagline: "Invite you to celebrate their wedding",
+        heroDate: "Saturday, 26 September 2026"
+
+    },
+
+    pt: {
+
+        inviteText: "Convidam você para celebrar seu casamento",
+        inviteDate: "26 Setembro 2026",
+
+        heroTagline: "Convidam você para celebrar seu casamento",
+        heroDate: "Sábado, 26 de Setembro de 2026"
+
+    }
+
+};
+
+/* =====================================
+   APPLY LANGUAGE
+===================================== */
+
+function setLanguage(lang) {
+
+    currentLanguage = lang;
+
+    localStorage.setItem("language", lang);
+
+    /* aggiorna UI flags */
+    document.querySelectorAll(".flag").forEach(flag => {
         flag.classList.remove("active");
-
     });
 
-    document
-        .querySelector(`[data-lang="${lang}"]`)
-        .classList.add("active");
+    const activeFlag = document.querySelector(`[data-lang="${lang}"]`);
+    if (activeFlag) activeFlag.classList.add("active");
 
-    document.getElementById("inviteText").textContent =
-        inviteTranslations[lang].text;
+    /* =========================
+       INVITO (ENVELOPE)
+    ========================= */
 
-    document.getElementById("inviteDate").textContent =
-        inviteTranslations[lang].date;
+    const inviteText = document.getElementById("inviteText");
+    const inviteDate = document.getElementById("inviteDate");
 
+    if (inviteText) {
+        inviteText.textContent = translations[lang].inviteText;
+    }
+
+    if (inviteDate) {
+        inviteDate.textContent = translations[lang].inviteDate;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    const heroTagline = document.getElementById("heroTagline");
+    const heroDate = document.getElementById("heroDate");
+
+    if (heroTagline) {
+        heroTagline.textContent = translations[lang].heroTagline;
+    }
+
+    if (heroDate) {
+        heroDate.textContent = translations[lang].heroDate;
+    }
+}
+
+/* =====================================
+   INIT LANGUAGE ON LOAD
+===================================== */
+
+const savedLang = localStorage.getItem("language");
+
+if (savedLang) {
+    setLanguage(savedLang);
+} else {
+    setLanguage("it");
+}
+
+/* =====================================
+   ENVELOPE OPEN (TUO CODICE)
+===================================== */
+
+function openInvitation() {
+
+    const envelope = document.querySelector(".envelope");
+
+    envelope.classList.add("open");
+
+    setTimeout(() => {
+        envelope.classList.add("flap-open");
+    }, 700);
+
+    setTimeout(() => {
+
+        const intro = document.getElementById("intro");
+
+        intro.style.opacity = "0";
+
+        setTimeout(() => {
+            intro.style.display = "none";
+        }, 1200);
+
+    }, 2500);
 }
 
 /* lingua salvata */

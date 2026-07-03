@@ -1178,4 +1178,34 @@ ANIMAZIONI
 
 }
 
+/* =====================================
+REVEAL
+===================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+
+        translateY(60px);
+
+    transition:
+
+        opacity 1.1s ease,
+
+        transform 1.1s ease;
+
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:
+
+        translateY(0);
+
+}
+
 

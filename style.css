@@ -1208,4 +1208,129 @@ REVEAL
 
 }
 
+/*======================================
+LANGUAGE SELECTOR
+======================================*/
+
+.language-selector{
+
+    position:absolute;
+
+    top:70px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    text-align:center;
+
+    z-index:100;
+
+}
+
+.language-title{
+
+    font-size:18px;
+
+    letter-spacing:1px;
+
+    color:#7b6b73;
+
+    margin-bottom:20px;
+
+    opacity:.85;
+
+}
+
+.language-flags{
+
+    display:flex;
+
+    gap:22px;
+
+    justify-content:center;
+
+}
+
+.flag{
+
+    background:rgba(255,255,255,.35);
+
+    backdrop-filter:blur(12px);
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:10px 14px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    min-width:82px;
+
+}
+
+.flag img{
+
+    width:46px;
+    height:46px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    box-shadow:
+
+        0 6px 14px rgba(0,0,0,.15);
+
+}
+
+.flag span{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#7d6d75;
+
+}
+
+.flag:hover{
+
+    transform:
+
+        translateY(-4px)
+        scale(1.06);
+
+}
+
+.flag.active{
+
+    background:white;
+
+    box-shadow:
+
+        0 12px 28px rgba(0,0,0,.10);
+
+    transform:scale(1.08);
+
+}
+
+.flag.active img{
+
+    box-shadow:
+
+        0 0 0 3px #d7b9c3,
+
+        0 10px 20px rgba(0,0,0,.18);
+
+}
+
 

@@ -541,6 +541,41 @@ reveals.forEach(section=>{
     observer.observe(section);
 
 });
+
+  /*======================================
+LANGUAGE
+======================================*/
+
+let currentLanguage = "it";
+
+function setLanguage(lang){
+
+    currentLanguage = lang;
+
+    localStorage.setItem("language", lang);
+
+    document.querySelectorAll(".flag").forEach(flag=>{
+
+        flag.classList.remove("active");
+
+    });
+
+    document
+        .querySelector(`[data-lang="${lang}"]`)
+        .classList.add("active");
+
+}
+
+/* lingua salvata */
+
+const savedLang = localStorage.getItem("language");
+
+if(savedLang){
+
+    setLanguage(savedLang);
+
+}
+  
 </script>
 
 </body>

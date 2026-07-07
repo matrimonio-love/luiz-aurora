@@ -301,7 +301,7 @@ No transfers needed, you’ll arrive straight in San Benedetto del Tronto.</p>
   
 </section>
 
-  <section class="card pastel-green reveal">
+  <section id="onde" class="card pastel-green reveal">
   <h2>Where to stay</h2>
   <a class="location-button"
    href="https://maps.app.goo.gl/UMn2c6WvofGReMvy8"
@@ -695,6 +695,24 @@ No transfers needed, you’ll arrive straight in San Benedetto del Tronto.</p>
     </span>
 </a>
     `,
+
+        onde:`<h2>Where to stay</h2>
+  <a class="location-button"
+   href="https://maps.app.goo.gl/UMn2c6WvofGReMvy8"
+   target="_blank">
+<span class="location-text">
+      🏠 Marlin B&B
+    </span>
+
+    <span class="location-arrow">
+        →
+    </span>
+</a>
+    <p>Close to the town center and the church where the ceremony will take place</p>
+    <br></br>
+    <p><strong>Other options</strong></p>
+ <p>You can also find great places on:
+ Booking.com · Airbnb</p>`,
       
         rsvplg: "We will be delighted to share this special day with you. <br><br> We kindly ask you to confirm your attendance by filling out the form.",
 
@@ -801,7 +819,24 @@ Sem transferências, você chegará diretamente a San Benedetto del Tronto.</p>
     </span>
 </a>
     `,
+ 
+        onde:`<h2>Onde ficar</h2>
+  <a class="location-button"
+   href="https://maps.app.goo.gl/UMn2c6WvofGReMvy8"
+   target="_blank">
+<span class="location-text">
+      🏠 Marlin B&B
+    </span>
 
+    <span class="location-arrow">
+        →
+    </span>
+</a>
+    <p>Próximo ao centro e a igreja onde a cerimônia acontecerá</p>
+    <br></br>
+    <p><strong>OOutras opções</strong></p>
+ <p>Você pode encontrar ótimas opções em:
+ Booking.com · Airbnb</p>`
       
         rsvplg: "Será um prazer compartilhar este dia especial com você. <br><br> Pedimos, por gentileza, que confirme sua presença preenchendo o formulário.",
         
@@ -894,6 +929,9 @@ document.getElementById("storyText").textContent =
 
 document.getElementById("travelSection").innerHTML =
     translations[lang].travelSection;  
+
+document.getElementById("onde").innerHTML =
+    translations[lang].onde;   
 
 document.getElementById("rsvplg").innerHTML =
     translations[lang].rsvplg;

@@ -13,6 +13,8 @@ body{
     background-size: cover;
   overflow-x:hidden;
   color:#9b6076;
+  -webkit-user-select: none;
+    user-select: none;
 }
 
 /* ===================================== */

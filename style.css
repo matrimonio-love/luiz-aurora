@@ -1333,4 +1333,23 @@ LANGUAGE SELECTOR
 
 }
 
+body,
+section,
+header,
+div,
+p,
+h1,
+h2,
+h3{
+    cursor: default;
+}
+
+a,
+button,
+.flag,
+.location-button,
+.envelope{
+    cursor: pointer;
+}
+
 

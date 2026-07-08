@@ -941,6 +941,25 @@ document.getElementById("rsvpbtn").innerHTML =
 
 document.getElementById("contactTitle").textContent =
     translations[lang].contactTitle;
+
+  const travelSection =
+document.getElementById("travelSection");
+
+const staySection =
+document.getElementById("staySection");
+
+if(lang === "it"){
+
+    travelSection.style.display = "none";
+    staySection.style.display = "none";
+
+}
+else{
+
+    travelSection.style.display = "block";
+    staySection.style.display = "block";
+
+}
 }
 
 /* =====================================

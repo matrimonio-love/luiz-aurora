@@ -261,7 +261,7 @@ body{
 
     transition:
         opacity 5.5s ease,
-        transform 15s ease;
+        transform 10s ease;
 }
 
 .slide.active{

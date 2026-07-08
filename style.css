@@ -260,8 +260,8 @@ body{
     transform:scale(1);
 
     transition:
-        opacity 4.5s ease,
-        transform 20s ease;
+        opacity 2.5s ease,
+        transform 10s ease;
 }
 
 .slide.active{
